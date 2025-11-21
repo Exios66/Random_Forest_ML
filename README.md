@@ -97,13 +97,13 @@ Its goal is to help users understand *how Random Forests work internally* rather
 
   ```bash
     Random_Forest_ML/
-    ├── docs/               # Documentation (Quarto files, HTML, theory)
+    ├── docs/ # Documentation (Quarto files, HTML, theory)
     ├── crewai/             
-    ├── your_python_code/    # Python implementation of random forest
+    ├── your_python_code/ # Python implementation of random forest
     ├── README.md
-    ├── LICENSE             # MIT License
-    └── _L4L.qmd             # Quarto / markdown-like file
-    ```
+    ├── LICENSE # MIT License
+    └── _L4L.qmd # Quarto / 
+  ```
     
 ### 🤝 Contributing
 
@@ -118,13 +118,13 @@ Please follow these steps:
 3. Make your changes, and include tests / documentation if relevant
 4. Submit a pull request
 
-⸻
+---
 
 ### 📄 License
 
 This project is licensed under the MIT License — see the LICENSE￼ file for details.
 
-⸻
+---
 
 ### ✉️ Contact / Support
 • For bugs or feature requests, please open an issue on GitHub.
