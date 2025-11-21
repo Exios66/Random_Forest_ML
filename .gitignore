@@ -1,0 +1,60 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj
+
+
+# Jupyter Notebooks
+*.ipynb
+.ipynb_checkpoints/
+
+# Environment files
+.env
+.venv/
+venv/
+ENV/
+env/
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+.history/
+
+# Build, cache, and logs
+*.log
+*.out
+*.aux
+*.toc
+*.tmp
+.cache/
+__pypackages__/
+.mypy_cache/
+.pytest_cache/
+coverage.*
+htmlcov/
+
+# Package managers
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python eggs and dist
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Other
+*.sqlite3
+*.db
+

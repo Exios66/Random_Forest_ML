@@ -848,14 +848,14 @@ XGBoost extends gradient boosting with regularization, parallel processing, and 
 #| echo: true
 #| output: true
 
+# Prepare data (outside try block so variables are always available)
+X_train_gb, X_test_gb, y_train_gb, y_test_gb = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y
+)
+
 try:
     import xgboost as xgb
     from sklearn.metrics import accuracy_score, mean_squared_error
-    
-    # Prepare data
-    X_train_gb, X_test_gb, y_train_gb, y_test_gb = train_test_split(
-        X, y, test_size=0.2, random_state=42, stratify=y
-    )
     
     # XGBoost Classifier
     xgb_classifier = xgb.XGBClassifier(
@@ -941,6 +941,7 @@ rf_time = time.time() - start
 
 # XGBoost
 try:
+    import xgboost as xgb
     start = time.time()
     xgb_comp = xgb.XGBClassifier(n_estimators=100, n_jobs=-1, random_state=42, tree_method='hist')
     xgb_comp.fit(X_comp, y_comp)
@@ -950,8 +951,10 @@ try:
     print(f"  Random Forest: {rf_time:.2f} seconds")
     print(f"  XGBoost: {xgb_time:.2f} seconds")
     print(f"  Speedup: {rf_time/xgb_time:.2f}x")
-except:
+except ImportError:
     print("XGBoost comparison requires xgboost installation")
+except Exception as e:
+    print(f"XGBoost comparison error: {e}")
 ```
 
 ## Support Vector Machines for Large-Scale Data
@@ -1201,10 +1204,13 @@ results['Random Forest'] = accuracy_score(y_test_gb, rf_comp.predict(X_test_gb))
 
 # XGBoost
 try:
+    import xgboost as xgb
     xgb_comp = xgb.XGBClassifier(n_estimators=100, n_jobs=-1, random_state=42, tree_method='hist')
     xgb_comp.fit(X_train_gb[:20000], y_train_gb[:20000])
     results['XGBoost'] = accuracy_score(y_test_gb, xgb_comp.predict(X_test_gb))
-except:
+except ImportError:
+    pass
+except Exception:
     pass
 
 # Linear SVM
