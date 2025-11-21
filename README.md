@@ -95,7 +95,7 @@ Its goal is to help users understand *how Random Forests work internally* rather
 
 ### Architecture
 
-```bash
+  ```bash
     Random_Forest_ML/
     ├── docs/               # Documentation (Quarto files, HTML, theory)
     ├── crewai/             
